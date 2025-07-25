@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamVerse - Anime, Cartoons & Dramas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>🎬 StreamVerse</h2>
+            </div>
+            
+            <div class="nav-search">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search anime, cartoons, dramas...">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            
+            <div class="nav-menu">
+                <a href="#" class="nav-link active" data-page="home">🏠 Home</a>
+                <a href="#" class="nav-link" data-page="anime">🇯🇵 Anime</a>
+                <a href="#" class="nav-link" data-page="cartoons">🎨 Cartoons</a>
+                <a href="#" class="nav-link" data-page="kdramas">🇰🇷 K-Dramas</a>
+                <a href="#" class="nav-link" data-page="cdramas">🇨🇳 C-Dramas</a>
+                <div class="nav-user">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home-page" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>🌟 Discover Amazing Stories</h1>
+                <p>Watch the latest anime, cartoons, K-dramas, and C-dramas all in one place</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary">🚀 Start Watching</button>
+                    <button class="btn-secondary">📚 Browse Collection</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Hero Image">
+            </div>
+        </section>
+
+        <!-- Filter Section -->
+        <section class="filters">
+            <div class="container">
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-type="all">✨ All</button>
+                    <button class="filter-tab" data-type="anime">🇯🇵 Anime</button>
+                    <button class="filter-tab" data-type="cartoon">🎨 Cartoons</button>
+                    <button class="filter-tab" data-type="kdrama">🇰🇷 K-Drama</button>
+                    <button class="filter-tab" data-type="cdrama">🇨🇳 C-Drama</button>
+                </div>
+                
+                <div class="filter-options">
+                    <select id="genreFilter">
+                        <option value="">🎭 All Genres</option>
+                        <option value="action">⚔️ Action</option>
+                        <option value="romance">💕 Romance</option>
+                        <option value="comedy">😂 Comedy</option>
+                        <option value="fantasy">🧙‍♂️ Fantasy</option>
+                        <option value="thriller">🔍 Thriller</option>
+                        <option value="slice-of-life">🌸 Slice of Life</option>
+                    </select>
+                    
+                    <select id="statusFilter">
+                        <option value="">📺 All Status</option>
+                        <option value="ongoing">🔄 Ongoing</option>
+                        <option value="completed">✅ Completed</option>
+                    </select>
+                    
+                    <select id="yearFilter">
+                        <option value="">📅 All Years</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Trending Section -->
+            <section class="content-section">
+                <div class="container">
+                    <h2 class="section-title">🔥 Trending Now</h2>
+                    <div class="content-grid" id="trendingGrid">
+                        <!-- Content will be populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Newly Released Section -->
+            <section class="content-section">
+                <div class="container">
+                    <h2 class="section-title">✨ Newly Released</h2>
+                    <div class="content-grid" id="newlyReleasedGrid">
+                        <!-- Content will be populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Top Rated Section -->
+            <section class="content-section">
+                <div class="container">
+                    <h2 class="section-title">⭐ Top Rated</h2>
+                    <div class="content-grid" id="topRatedGrid">
+                        <!-- Content will be populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Genre Collections -->
+            <section class="content-section">
+                <div class="container">
+                    <h2 class="section-title">📚 Popular Collections</h2>
+                    <div class="collections-grid">
+                        <div class="collection-card">
+                            <h3>🌸 Romance Anime</h3>
+                            <p>Heartwarming love stories</p>
+                            <button class="btn-small">Explore</button>
+                        </div>
+                        <div class="collection-card">
+                            <h3>🧛‍♂️ Fantasy C-Dramas</h3>
+                            <p>Magical adventures</p>
+                            <button class="btn-small">Explore</button>
+                        </div>
+                        <div class="collection-card">
+                            <h3>🕵️ Mystery K-Dramas</h3>
+                            <p>Thrilling mysteries</p>
+                            <button class="btn-small">Explore</button>
+                        </div>
+                        <div class="collection-card">
+                            <h3>🎒 School Cartoons</h3>
+                            <p>Educational fun</p>
+                            <button class="btn-small">Explore</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Anime Page -->
+    <div id="anime-page" class="page">
+        <div class="page-header">
+            <div class="container">
+                <h1>🇯🇵 Anime Collection</h1>
+                <p>Discover amazing Japanese animation</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="content-grid" id="animeGrid">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Cartoons Page -->
+    <div id="cartoons-page" class="page">
+        <div class="page-header">
+            <div class="container">
+                <h1>🎨 Cartoons Collection</h1>
+                <p>Fun animated series for everyone</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="content-grid" id="cartoonsGrid">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- K-Dramas Page -->
+    <div id="kdramas-page" class="page">
+        <div class="page-header">
+            <div class="container">
+                <h1>🇰🇷 Korean Dramas</h1>
+                <p>Captivating stories from South Korea</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="content-grid" id="kdramasGrid">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- C-Dramas Page -->
+    <div id="cdramas-page" class="page">
+        <div class="page-header">
+            <div class="container">
+                <h1>🇨🇳 Chinese Dramas</h1>
+                <p>Epic tales from ancient and modern China</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="content-grid" id="cdramasGrid">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Player Modal -->
+    <div class="modal" id="videoModal">
+        <div class="modal-content video-modal">
+            <span class="close" id="closeVideo">&times;</span>
+            <div class="video-container">
+                <iframe id="videoPlayer" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <h3 id="videoTitle"></h3>
+                <p id="videoDescription"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Show Detail Modal -->
+    <div class="modal" id="showModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🎬 StreamVerse</h3>
+                    <p>Your ultimate destination for anime, cartoons, and dramas from around the world.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#" data-page="anime">🇯🇵 Anime</a></li>
+                        <li><a href="#" data-page="cartoons">🎨 Cartoons</a></li>
+                        <li><a href="#" data-page="kdramas">🇰🇷 K-Dramas</a></li>
+                        <li><a href="#" data-page="cdramas">🇨🇳 C-Dramas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Genres</h4>
+                    <ul>
+                        <li><a href="#">⚔️ Action</a></li>
+                        <li><a href="#">💕 Romance</a></li>
+                        <li><a href="#">😂 Comedy</a></li>
+                        <li><a href="#">🧙‍♂️ Fantasy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 StreamVerse. All rights reserved. 🌟</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
